@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>codeChef</title>
+
+<!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+<body>
+
+<home></home>
+
+
+
+<!-- FONT AWESOME -->
+<script src="https://use.fontawesome.com/3e2cf784ed.js"></script>
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCxCuoTiuw-T-PiFnoAuW4nvwZuLF4ORUs",
+    authDomain: "code-chef.firebaseapp.com",
+    databaseURL: "https://code-chef.firebaseio.com",
+    projectId: "code-chef",
+    storageBucket: "",
+    messagingSenderId: "343729364211"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<!-- RIOT -->
+  <script src="tags/home.tag" type="riot/tag"></script>
+  <script src="tags/my-pantry.tag" type="riot/tag"></script>
+  <script src="tags/new-recipe.tag" type="riot/tag"></script>
+  <script src="https://cdn.jsdelivr.net/npm/riot@3.7/riot+compiler.min.js"></script>
+  <script>
+      riot.mount('*');
+  </script>
+
+  <style>
+
+    button {
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+  </style>
+
+</body>
+</html>

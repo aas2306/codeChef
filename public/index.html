@@ -7,12 +7,15 @@
   <title>codeChef</title>
 
 <!-- BOOTSTRAP -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
 
 </head>
 <body>
 
-<home></home>
+  <auth></auth>
+  <home></home>
 
 
 
@@ -35,9 +38,21 @@
 
 
 <!-- RIOT -->
+  <script src="tags/auth.tag" type="riot/tag"></script>
   <script src="tags/home.tag" type="riot/tag"></script>
   <script src="tags/my-pantry.tag" type="riot/tag"></script>
   <script src="tags/new-recipe.tag" type="riot/tag"></script>
+  <script src="tags/ingredient-input.tag" type="riot/tag"></script>
+  <script src="tags/write-recipe.tag" type="riot/tag"></script>
+  <script src="tags/step-input.tag" type="riot/tag"></script>
+  <script src="tags/preview.tag" type="riot/tag"></script>
+  <script src="tags/community.tag" type="riot/tag"></script>
+  <script src="tags/comm-prev.tag" type="riot/tag"></script>
+  <script src="tags/show-recipe.tag" type="riot/tag"></script>
+
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/riot@3.7/riot+compiler.min.js"></script>
   <script>
       riot.mount('*');

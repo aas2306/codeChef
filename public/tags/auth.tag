@@ -1,7 +1,8 @@
 <auth>
 
   <div class="navBtns">
-    <button if={user} onclick={goToComm} type="button" class="btn" id="communityBtn">Community</button>
+    <button type="button" onclick={goToNew} type="btn" class="btn yellowbtn">newRecipe()</button>
+    <button if={user} onclick={goToComm} type="button" class="btn yellowbtn">Community</button>
     <button if={user} onclick={goToPantry} type="button" class="btn">My Pantry</button>
     <button if={!user} onclick={logIn} type="button" class="btn" id="">Log In</button>
     <button if={user} onclick={logOut} type="button" class="btn" id="">Log Out</button>
@@ -53,6 +54,9 @@
         that.goToComm = function() {
           that.root.nextElementSibling._tag.goToComm();
         }
+        that.goToNew = function() {
+          that.root.nextElementSibling._tag.goToNew();
+        }
 
     </script>
 
@@ -71,7 +75,7 @@
           top: 35px;
           z-index: 99%;
         }
-        #communityBtn {
+        .yellowbtn {
           background-color: palegoldenrod;
           color: black;
         }

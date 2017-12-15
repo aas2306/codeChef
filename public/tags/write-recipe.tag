@@ -40,6 +40,7 @@
    that.newinputtoggle = false;
    that.otherInputs = [];
    that.user = firebase.auth().currentUser;
+   console.log('writerecipe', that);
 
    that.transferText = function() {
      var input = that.refs.stepsinput.value;
@@ -133,11 +134,13 @@
      var printref = firebase.database().ref(`recipes/${that.parent.newRecipe.id}/printtext`);
      printref.set(printtext);
      that.copyToPrivate();
+     that.addAuth();;
+     that.parent.parent.goToPantry();
    }
 
    that.recipedata;
    that.copyToPrivate = function() {
-     var uid = that.user.uid;
+     // var uid = that.user.uid;
      var reciperef = firebase.database().ref(`recipes/${that.parent.newRecipe.id}`);
      reciperef.once('value', function(snapshot){
        that.recipedata = snapshot.val();
@@ -146,6 +149,16 @@
 
      var privateref = firebase.database().ref(`private/${that.user.uid}/myrecipes/${that.parent.newRecipe.id}`);
      privateref.set(that.recipedata);
+   }
+
+   that.addAuth = function() {
+     console.log(that.user);
+     firebase.database().ref(`private/${that.user.uid}/userid`).set(that.user.uid);
+     firebase.database().ref(`private/${that.user.uid}/name`).set(that.user.displayName);
+     firebase.database().ref(`private/${that.user.uid}/email`).set(that.user.email);
+
+     firebase.database().ref(`recipes/${that.parent.newRecipe.id}/userid`).set(that.user.uid);
+     firebase.database().ref(`recipes/${that.parent.newRecipe.id}/author`).set(that.user.displayName);
    }
 
 </script>

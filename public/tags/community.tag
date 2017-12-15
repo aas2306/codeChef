@@ -1,18 +1,14 @@
 <community>
 
-  <h2>codeChef Community</h2>
-  <h5>View and remix other recipes</h5>
-
-<div class="row">
-    <div class="col-4">
-      <ul>
-        <comm-prev each={allrecipes}></comm-prev>
-      </ul>
-    </div>
-
-    <div class="col-8">
-      <view-recipe></view-recipe>
-    </div>
+  <p>Filter by: <select>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    </select>
+  </p>
+  <ul>
+    <comm-prev each={allrecipes}></comm-prev>
+  </ul>
 
 </div>
 
@@ -20,6 +16,7 @@
   var that = this;
   that.user = firebase.auth().currentUser;
   that.allrecipes = [];
+  console.log("community loaded");
 
   var allRecipesRef = firebase.database().ref("recipes");
   allRecipesRef.on('value', function(snapshot){
@@ -32,13 +29,6 @@
 </script>
 
 <style>
-  h2 {
-    color: teal;
-    font-weight: bold;
-  }
-  h5 {
-    color: tomato;
-  }
 
 </style>
 

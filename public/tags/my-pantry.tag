@@ -1,32 +1,20 @@
 <my-pantry>
 
-
-<div class="row" style="margin: 0px 0px 0px 10px;" if={!newrecipe}>
-  <!-- <div  > -->
-    <div class="col-4 pantry">
-      <h5>My Pantry</h5>
-      <button type="button" class="btn" onclick={ newRec }>newRecipe()</button>
-      <ul>
-        <preview each={previews}></preview>
-      </ul>
-  </div>
-  <div class="col-8 viewrec">
-    <view-recipe if={viewrecipe}></view-recipe>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col" if={ newrecipe }>
-    <new-recipe></new-recipe>
-  </div>
-</div>
-
-
+  <p>Sort by:
+    <select>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </p>
+  <ul>
+    <preview each={previews}></preview>
+  </ul>
 
 <script>
   var that = this;
   that.newrecipe = false;
-  that.viewrecipe = false;
+  // that.viewrecipe = false;
   that.previews = [];
   that.user = firebase.auth().currentUser;
 
@@ -47,7 +35,6 @@
   })
 
 </script>
-
 
 <style>
 .pantry {

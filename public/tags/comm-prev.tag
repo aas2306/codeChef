@@ -1,5 +1,5 @@
 <comm-prev>
-  <li>
+  <li onclick={parent.parent.goToView}>
     {thisRecipe.recipeTitle} ()
   </li>
 
@@ -7,7 +7,7 @@
   var that = this;
   // that.user = firebase.auth().currentUser;
   // console.log("that", that);
-  console.log("")
+  console.log("");
   that.thisRecipe;
 
   var thisRecipeRef = firebase.database().ref(`recipes/${this.id}`);
@@ -21,9 +21,9 @@
 
 <style>
   li {
-    color: black;
+    text-decoration: underline;
+    cursor: pointer;
   }
-
 </style>
 
 </comm-prev>
